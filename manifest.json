@@ -1,0 +1,34 @@
+{
+    "locations": {
+        "storefront": {
+            "global_footer": "snippets/custom-snippets.html"
+        }
+    },
+    "settings_schema": [
+        {
+            "name": "payment_button_text_above_checkbox",
+            "label": "Checkbox Confirmation Above Payment Button",
+            "type": "text",
+            "help_text": "Checkbox box with text above the payment button.",
+            "max_length": 500
+        },
+        {
+            "name": "payment_button_html_above",
+            "label": "HTML Above Payment Button",
+            "type": "html",
+            "help_text": "HTML above the payment button."
+        },
+        {
+            "name": "payment_button_html_below",
+            "label": "HTML Below Payment Button",
+            "type": "html",
+            "help_text": "HTML below the payment button."
+        },
+        {
+            "name": "sidebar_extra_html",
+            "label": "HTML in Sidebar Below Order Summary",
+            "type": "html",
+            "help_text": "HTML below the order summary in the sidebar."
+        }
+    ]
+}

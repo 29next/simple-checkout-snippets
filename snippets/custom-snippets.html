@@ -1,0 +1,15 @@
+
+{% if request.path == '/checkout/' or request.path == '/checkout/shipping-address/' or request.path == '/checkout/shipping-method/' or request.path == '/checkout/payment-details/' %}
+
+
+<script type="text/javascript" src="{% app_asset_url 'assets/custom-snippets.js' %}"></script> 
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    // Initialize the custom snippets
+    paymentBtnAndInject();
+    injectSidebarExtraHTML();
+  });
+</script>
+
+{% endif %}
