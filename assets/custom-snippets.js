@@ -1,3 +1,5 @@
+const config = window.customSnippetsConfig || {};
+
 function checkboxConfirmationHTML(text) {
     return `
         <div class="checkout_steps--section section--extra">
@@ -33,11 +35,10 @@ function extraSidebarHTML(html) {
 }
 
 function addCheckboxConfirmation() {
-    const checkboxText = '{{ app.settings.payment_button_text_above_checkbox }}';
-    if (checkboxText) {
+    if (config.paymentButtonAboveCheckbox) {
         const paymentBtn = document.querySelector('#paymentBtn');
         if (paymentBtn) {
-            const checkboxHTML = checkboxConfirmationHTML(checkboxText);
+            const checkboxHTML = checkboxConfirmationHTML(config.paymentButtonAboveCheckbox);
             paymentBtn.insertAdjacentHTML('beforebegin', checkboxHTML);
 
             // Disable payment button initially
@@ -79,9 +80,7 @@ function injectAbovePaymentButton() {
     if (paymentBtn) {
         const footerDiv = paymentBtn.closest('.checkout_steps--footer-next_link');
         if (footerDiv) {
-            const customHTML = `
-                {{ app.settings.payment_button_html_above|safe }}
-            `;
+            const customHTML = config.paymentButtonHTMLAbove || '';
             footerDiv.insertAdjacentHTML('beforebegin', customHTML);
         }
     }
@@ -90,9 +89,7 @@ function injectAbovePaymentButton() {
 function injectBelowPaymentBtn() {
     const paymentBtn = document.querySelector('#paymentBtn');
     if (paymentBtn) {
-        const customHTML = `
-            {{ app.settings.payment_button_html_below|safe }}
-        `;
+        const customHTML = config.paymentButtonHTMLBelow || '';
         paymentBtn.insertAdjacentHTML('afterend', customHTML);
     }
 }
@@ -100,9 +97,7 @@ function injectBelowPaymentBtn() {
 function injectSidebarExtraHTML() {
     const summaryInner = document.querySelector('.checkout_summary--inner');
     if (summaryInner) {
-        const customHTML = `
-            {{ app.settings.sidebar_extra_html|safe }}
-        `;
+        const customHTML = config.sidebarSummaryBelow || '';
         summaryInner.insertAdjacentHTML('beforeend', customHTML);
     }
 }
