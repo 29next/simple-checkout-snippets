@@ -14,3 +14,8 @@ This repository provides a set of simple, configurable snippets to enhance and c
 These options allow for flexible and user-friendly checkout customizations to improve compliance, marketing, and overall user experience.
 
 
+### Screenshots
+
+**Desktop**
+
+![Upsell Bump Desktop](/assets/screenshots/simple-checkout-snippets.jpg)
