@@ -1,5 +1,5 @@
 
-{% if request.path == '/checkout/' or request.path == '/checkout/shipping-address/' or request.path == '/checkout/shipping-method/' or request.path == '/checkout/payment-details/' %}
+{% if '/checkout/' in request.path %}
 <script>
 window.customSnippetsConfig = {
   "paymentButtonAboveCheckbox": "{{ app.settings.payment_button_text_above_checkbox }}",
@@ -8,7 +8,7 @@ window.customSnippetsConfig = {
   "sidebarSummaryBelow": `{{ app.settings.sidebar_extra_html|safe }}`,
 }
 </script>
-<script type="text/javascript" src="{% app_asset_url 'assets/custom-snippets.js' %}"></script> 
+<script type="text/javascript" src="{% app_asset_url 'assets/custom-snippets.js' %}"></script>
 
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
